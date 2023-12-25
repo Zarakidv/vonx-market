@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Crypto Tokens</title>
+  <title>VonxBlockchain Market</title>
 
   <style>
     table {
@@ -29,7 +29,7 @@ th {
         <!-- Numbers will be added here dynamically -->
       </div>
     </div>
-    <table id="tokenTable">
+    <table id="tokenTable" >
       <thead>
         <tr>
           <th>Name</th>
@@ -38,11 +38,13 @@ th {
           <th>Price Change (24h)</th>
         </tr>
       </thead>
-      <tbody id="tokenData">
+      <tbody id="tokenData" >
         <!-- Table content will be added here dynamically -->
       </tbody>
     </table>
   </div>
+
+ 
 
 
   <script>
@@ -62,7 +64,7 @@ fetch('https://api.coinranking.com/v2/coins?tags[]=drc-20')
       const {symbol, price, marketCap, change, iconUrl, icoUrl } = token;
 
       // Limiting price to three figures
-      const formattedPrice = parseFloat(price).toFixed(3);
+      const formattedPrice = parseFloat(price).toFixed(2);
 
       // Check if the price change is negative
       const isNegative = change < 0;
@@ -73,8 +75,8 @@ fetch('https://api.coinranking.com/v2/coins?tags[]=drc-20')
       const priceColorStyle = isNegative ? 'color: red;' : '';
 
       row.innerHTML = `
-        <td>${symbol}</td>
-        <td  >$${formattedPrice}</td>
+        <td> <img src="${iconUrl}" alt="logo" width="40" height="40"> ${symbol} </td>
+        <td  >$${formattedPrice} </td>
         <td>$${marketCap}</td>
         <td style="${priceColorStyle}">${change}%</td> `
       ;
