@@ -14,6 +14,7 @@
     - custom css link
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="style.css">
 
   <!-- 
     - google font link
@@ -29,7 +30,7 @@
     - #HEADER
   -->
 
-  <header class="header" data-header>
+  <header class="header" >
     <div class="container">
 
       <a href="#" class="logo">
@@ -88,12 +89,12 @@
         - #HERO
       -->
 
-      <section class="section hero" aria-label="hero" data-section>
+      <section class="section hero" aria-label="hero" >
         <div class="container">
 
           <div class="hero-content">
 
-            <h1 class="h1 hero-title">Buy & Sell DRC-20 Digital Assets   </h1>
+            <h1 class="h1 hero-title">Buy & Sell Digital Assets In DRC-20</h1>
 
             <p class="hero-text">
               DRC-20 is a token standard on the Dogecoin network that allows developers and users to create fungible assets within Dogecoin's ecosystem.
@@ -110,18 +111,18 @@
         </div>
       </section>
 
-      <br><br><br><br>
+
 
 <!-- balance start -->
 <div id="Balances"></div>
-<br><br><br><br>
-<div id="" class="containe">
+
+<!-- <div id="" class="containe">
   <h2>Get Wallet Balance</h2>
   <input type="text" id="walletAddress" placeholder="Enter wallet address">
   <button class="button" onclick="getBalance()">Get Balance</button>
   <div id="balance"></div>
-</div>
-<script>
+</div> -->
+<!-- <script>
   function getBalance() {
       const walletAddress = document.getElementById('walletAddress').value;
       if (!walletAddress) {
@@ -147,20 +148,16 @@
           alert('An error occurred while fetching the balance');
       });
   }
-</script>
+</script> -->
 
 <!-- balance end -->
-
-<br><br><br>
-
-
 
      
       <!-- 
         - #MARKET
       -->
 
-      <section id="market" class="section market" aria-label="market update" data-section>
+      <section id="market" class="section market" aria-label="market update" >
         <div class="container">
 
           <div class="title-wrapper">
@@ -172,7 +169,7 @@
           <div class="market-tab">
 
           
-            <table class="market-table">
+            <table class="market-table" id="tokenBody">
 
               <thead class="table-head">
 
@@ -180,7 +177,7 @@
 
 
                   <th class="table-heading" scope="col">#</th>
-                  <th class="table-heading" scope="col"></th>
+                
 
                   <th class="table-heading" scope="col">Name</th>
 
@@ -198,306 +195,12 @@
 
               </thead>
 
-              <tbody class="table-body">
+              <tbody class="table-body" id="tokenData">
 
-                <tr class="table-row">
+            
+
              
-                  <td class="table-data">
-                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
-                     
-                    </button>
-                  </td>
-
-                  <th class="table-data rank" scope="row">1</th>
-
-                  <td class="table-data">
-                    <div class="wrapper">
-                      <img src="Drc20-Token/Vonx.png" width="40" height="40" alt="Vonx logo" class="img">
-
-                      <h3>
-                        <a href="#" class="coin-name">Vonx </a>
-                      </h3>
-                    </div>
-                  </td>
-
-                  <td class="table-data last-price">$56,623.54</td>
-
-                  <td class="table-data last-update green">+1.45%</td>
-
-                  <td class="table-data market-cap">$880,423,640,582</td>
-
-                
-
-                  <td class="table-data">
-                    <button class="btn btn-outline">Trade</button>
-                  </td> 
-
-                </tr>
-
-                <tr class="table-row">
-                  <td class="table-data">
-                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
-                     
-                    </button>
-                  </td>
-                  <th class="table-data rank" scope="row">2</th>
-
-                  <td class="table-data">
-                    <div class="wrapper">
-                      <img src="Drc20-Token/dall.png" width="40" height="40" alt="Dall logo" class="img">
-
-                      <h3>
-                        <a href="#" class="coin-name">Dall </a>
-                      </h3>
-                    </div>
-                  </td>
-
-                  <td class="table-data last-price">$56,623.54</td>
-
-                  <td class="table-data last-update green">+1.45%</td>
-
-                  <td class="table-data market-cap">$880,423,640,582</td>
-                  
-                  <td class="table-data">
-                    <button  class="btn btn-outline">Trade</button>
-                  </td>
-                
-
-                </tr>
-
-                <tr class="table-row">
-                  <td class="table-data">
-                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
-                     
-                    </button>
-                  </td>
-                  <th class="table-data rank" scope="row">3</th>
-
-                  <td class="table-data">
-                    <div class="wrapper">
-                      <img src="Drc20-Token/dogi.png" width="40" height="40" alt="Dogi logo" class="img">
-                      <!-- <span class="span">ETH</span> -->
-                      <h3>
-                        <a href="#" class="coin-name">Dogi  </a>
-                      </h3>
-                    </div>
-                  </td>
-
-                  <td class="table-data last-price">33.00 DOGE</td>
-
-                  <td class="table-data last-update red">-5.12%</td>
-
-                  <td class="table-data market-cap">$66,828,762.00</td>
-
-                 
-
-                </tr>
-
-                <tr class="table-row">
-                  <td class="table-data">
-                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
-                     
-                    </button>
-                  </td>
-                  <th class="table-data rank" scope="row">4</th>
-
-                  <td class="table-data">
-                    <div class="wrapper">
-                      <img src="Drc20-Token/pepe.png" width="40" height="40" alt="Pepe logo" class="img">
-
-                      <h3>
-                        <a href="#" class="coin-name">Pepe </a>
-                      </h3>
-                    </div>
-                  </td>
-
-                  <td class="table-data last-price">0.60 DOGE</td>
-
-                  <td class="table-data last-update green">+68.45%</td>
-
-                  <td class="table-data market-cap">$1,215,068.40</td>
-
-                 
-
-                </tr>
-
-                <tr class="table-row">
-                  <td class="table-data">
-                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
-                     
-                    </button>
-                  </td>
-                  <th class="table-data rank" scope="row">5</th>
-
-                  <td class="table-data">
-                    <div class="wrapper">
-                      <img src="Drc20-Token/fiwb.png" width="40" height="40" alt="Fiwb  logo" class="img">
-
-                      <h3>
-                        <a href="#" class="coin-name">Fiwb  </a>
-                      </h3>
-                    </div>
-                  </td>
-
-                  <td class="table-data last-price">$0.05 DOGE</td>
-
-                  <td class="table-data last-update red">-15.66%</td>
-
-                  <td class="table-data market-cap"> $5,111,002.00</td>
-
-
-                </tr>
-
-                <tr class="table-row">
-              
-                  <td class="table-data">
-                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
-                     
-                    </button>
-                  </td>
-                  <th class="table-data rank" scope="row">6</th>
-
-                  <td class="table-data">
-                    <div class="wrapper">
-                      <img src="Drc20-Token/elon.png" width="40" height="40" alt="Elon  logo" class="img">
-
-                      <h3>
-                        <a href="#" class="coin-name">Elon  </a>
-                      </h3>
-                    </div>
-                  </td>
-
-                  <td class="table-data last-price">0.11 DOGE</td>
-
-                  <td class="table-data last-update green">+1.98%</td>
-
-                  <td class="table-data market-cap">$212,636.97</td>
-
-
-                </tr>
-
-                <tr class="table-row">
-
-                  <td class="table-data">
-                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
-              
-                    </button>
-                  </td>
-
-                  <th class="table-data rank" scope="row">7</th>
-
-                  <td class="table-data">
-                    <div class="wrapper">
-                      <img src="Drc20-Token/dexm.png" width="20" height="20" alt="Dexm logo" class="img">
-
-                      <h3>
-                        <a href="#" class="coin-name">Dexm  </a>
-                      </h3>
-                    </div>
-                  </td>
-
-                  <td class="table-data last-price">0.12 DOGE</td>
-
-                  <td class="table-data last-update red">-6.86%</td>
-
-                  <td class="table-data market-cap"> $236,735.83</td>
-
-                 
-
-                </tr>
-
-                <tr class="table-row">
-
-                  <td class="table-data">
-                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
-                     
-                    </button>
-                  </td>
-
-                  <th class="table-data rank" scope="row">8</th>
-
-                  <td class="table-data">
-                    <div class="wrapper">
-                      <img src="Drc20-Token/dcex.png" width="20" height="20" alt="Dcex logo" class="img">
-
-                      <h3>
-                        <a href="#" class="coin-name">Dcex </a>
-                      </h3>
-                    </div>
-                  </td>
-
-                  <td class="table-data last-price">97.00 DOGE</td>
-
-                  <td class="table-data last-update green">-4.74%</td>
-
-                  <td class="table-data market-cap">$2,806,229.40</td>
-
-                 
-
-                </tr>
-
-                <tr class="table-row">
              
-                  <td class="table-data">
-                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
-                     
-                    </button>
-                  </td>
-
-                  <th class="table-data rank" scope="row">9</th>
-
-                  <td class="table-data">
-                    <div class="wrapper">
-                      <img src="Drc20-Token/jizo.png" width="40" height="40" alt="jizo logo" class="img">
-
-                      <h3>
-                        <a href="#" class="coin-name">jizo </a>
-                      </h3>
-                    </div>
-                  </td>
-
-                  <td class="table-data last-price">0.03 DOGE</td>
-
-                  <td class="table-data last-update red">-1.30%</td>
-
-                  <td class="table-data market-cap">$301,838.42</td>
-
-                
-
-               
-
-                </tr>
-
-                <tr class="table-row">
-             
-                  <td class="table-data">
-                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
-                     
-                    </button>
-                  </td>
-
-                  <th class="table-data rank" scope="row">10</th>
-
-                  <td class="table-data">
-                    <div class="wrapper">
-                      <img src="Drc20-Token/oink.png" width="40" height="40" alt="Oink logo" class="img">
-
-                      <h3>
-                        <a href="#" class="coin-name">Oink </a>
-                      </h3>
-                    </div>
-                  </td>
-
-                  <td class="table-data last-price">0.00 DOGE</td>
-
-                  <td class="table-data last-update green">+125.06%</td>
-
-                  <td class="table-data market-cap">$5,093,566.73</td>
-
-                
-
-                </tr>
-
               </tbody>
 
             </table>
@@ -507,6 +210,52 @@
 
         </div>
       </section>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+  const tableBody = document.getElementById('tokenBody');
+  let counter = 1;
+
+  fetch('https://api.coinranking.com/v2/coins?tags[]=drc-20')
+    .then(response => response.json())
+    .then(data => {
+      const tokens = data.data.coins.slice(0, 10); // Slice to get only the first 8 tokens
+
+      tokens.sort((a, b) => b.price - a.price);
+      
+      tokens.forEach(token => {
+        const {symbol, price, marketCap, change, iconUrl, icoUrl } = token;
+
+        const formattedPrice = parseFloat(price).toFixed(2);
+
+        const row = document.createElement('tr');
+        const changeColor = change >= 0 ? 'green' : 'red';
+        
+        row.innerHTML = `
+        <th class="table-data rank" scope="row">${counter}</th>
+        <td class="table-data">
+                    <div class="wrapper">
+                      <img src="${iconUrl}" width="40" height="40" alt="Vonx logo" class="img">
+
+                      <h3>
+                        <a href="#" class="coin-name">${symbol}  </a>
+                      </h3>
+                    </div>
+                  </td>
+                  <td class="table-data last-price">$${formattedPrice} </td>
+        
+                  <td class="table-data market-cap">$${marketCap}</td>
+                  <td class="table-data last-update" style="color: ${changeColor};" >${change}%</td>
+          `
+        ;
+        
+        tableBody.appendChild(row);
+        counter++;
+      });
+    })
+    .catch(error => console.error('Error fetching data:', error));
+});
+      </script>
 
 
 
@@ -525,7 +274,7 @@
         - #ABOUT
       -->
 
-      <section class="section about" aria-label="about" data-section>
+      <section class="section about" aria-label="about" >
         <div class="container">
 
           <figure class="about-banner">
