@@ -1,348 +1,579 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="img/logo1.png" type="image/svg+xml">
   <title>VonxBlockchain Market</title>
+  <style>
+    /* Reset some default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    a{
+        text-decoration: none;
+    }
 
- 
-  <link rel="shortcut icon" href="Drc20-Token/Vonx.png" type="image/svg+xml">
+    body{
+        min-height: 100vh;
+        background-image: url(img/bg1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
 
-  <!-- 
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="stylesheet" href="style.css">
+    /* Basic styling for the header */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      z-index: 9999;
+      /* background-color: #888787; */
+    }
 
-  <!-- 
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    /* Style the logo */
+    .logo img {
+      width: 50px; /* Adjust as needed */
+      height: auto;
+      margin-left: 50px;
+    }
+
+    /* Style the menu */
+    .menu ul {
+      list-style: none;
+      display: flex;
+    }
+
+    .menu li {
+      margin-right: 20px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      /* color: #333; */
+      color: white;
+     
+    }
+    .menu a:hover{
+        border-bottom: 1px solid white;
+    }
+
+    /* Style the button */
+    .button button {
+      padding: 8px 16px;
+      background-color:green;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-right: 50px;
+    }
+
+    /* Media query for responsiveness */
+    @media screen and (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu {
+        margin-top: 10px;
+      }
+
+      .button {
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+    }
+
+
+
+    /* @media print {
+ .table, .table__body {
+  overflow: visible;
+  height: auto !important;
+  width: auto !important;
+ }
+} */
+
+/*@page {
+    size: landscape;
+    margin: 0; 
+}*/
+
+
+.section-market{
+    margin-top: 100px;
+}
+
+main.table {
+    width: 82vw;
+    height: 90vh;
+    background-color: #fff5;
+
+    backdrop-filter: blur(7px);
+    box-shadow: 0 .4rem .8rem #0005;
+    border-radius: .8rem;
+
+    overflow: hidden;
+    /* margin-top: 200px; */
+    margin: auto;
+}
+
+.table__header {
+    width: 100%;
+    height: 10%;
+    background-color: #fff4;
+    padding: .8rem 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table__header .input-group {
+    width: 35%;
+    height: 100%;
+    background-color: #fff5;
+    padding: 0 .8rem;
+    border-radius: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: .2s;
+}
+
+.table__header .input-group:hover {
+    width: 45%;
+    background-color: #fff8;
+    box-shadow: 0 .1rem .4rem #0002;
+}
+
+.table__header .input-group img {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.table__header .input-group input {
+    width: 100%;
+    padding: 0 .5rem 0 .3rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.table__body {
+    width: 95%;
+    max-height: calc(89% - 1.6rem);
+    background-color: #fffb;
+
+    margin: .8rem auto;
+    border-radius: .6rem;
+
+    overflow: auto;
+    overflow: overlay;
+}
+
+
+.table__body::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.table__body::-webkit-scrollbar-thumb{
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+
+.table__body:hover::-webkit-scrollbar-thumb{ 
+    visibility: visible;
+}
+
+
+table {
+    width: 100%;
+}
+
+td img {
+    width: 36px;
+    height: 36px;
+    margin-right: .5rem;
+    border-radius: 50%;
+
+    vertical-align: middle;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    padding: 1rem;
+    text-align: left;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    left: 0;
+    /* background-color: #d5d1defe; */
+    background-color: #89a191;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #0000000b;
+}
+
+tbody tr {
+    --delay: .1s;
+    transition: .5s ease-in-out var(--delay), background-color 0s;
+}
+
+tbody tr.hide {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+tbody tr:hover {
+    background-color: #fff6 !important;
+}
+
+tbody tr td,
+tbody tr td p,
+tbody tr td img {
+    transition: .2s ease-in-out;
+}
+
+tbody tr.hide td,
+tbody tr.hide td p {
+    padding: 0;
+    font: 0 / 0 sans-serif;
+    transition: .2s ease-in-out .5s;
+}
+
+tbody tr.hide td img {
+    width: 0;
+    height: 0;
+    transition: .2s ease-in-out .5s;
+}
+
+.status {
+    padding: .4rem 0;
+    border-radius: 2rem;
+    text-align: center;
+}
+
+.status.delivered {
+    background-color: #86e49d;
+    color: #006b21;
+}
+
+.status.cancelled {
+    background-color: #d893a3;
+    color: #b30021;
+}
+
+.status.pending {
+    background-color: #ebc474;
+}
+
+.status.shipped {
+    background-color: #6fcaea;
+}
+
+
+@media (max-width: 1000px) {
+    td:not(:first-of-type) {
+        min-width: 12.1rem;
+    }
+}
+
+thead th span.icon-arrow {
+    display: inline-block;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    border: 1.4px solid transparent;
+    
+    text-align: center;
+    font-size: 1rem;
+    
+    margin-left: .5rem;
+    transition: .2s ease-in-out;
+}
+
+thead th:hover span.icon-arrow{
+    border: 1.4px solid #6c00bd;
+}
+
+thead th:hover {
+    color: #6c00bd;
+}
+
+thead th.active span.icon-arrow{
+    background-color: #6c00bd;
+    color: #fff;
+}
+
+thead th.asc span.icon-arrow{
+    transform: rotate(180deg);
+}
+
+thead th.active,tbody td.active {
+    color: #6c00bd;
+}
+
+.hide { display: none; }
+    tbody tr:nth-child(even) { background-color: #0000000b; }
+
+  </style>
 </head>
-
 <body>
 
-  <!-- 
-    - #HEADER
-  -->
+<header class="navbar">
+  <div class="logo">
+    <img src="img/logo1.png" alt="Logo">
+  </div>
+  <nav class="menu">
+    <ul>
+      <li><a href="#">HOME </a></li>
+      <li><a href="#">MARKET </a></li>
+      <li><a href="#">EXPLORER</a></li>
+      <li><a href="#">ABOUT US </a></li>
+    </ul>
+  </nav>
+  <div class="button">
+    <button>buy Vonx Now</button>
+  </div>
+</header>
 
-  <header class="header" >
-    <div class="container">
-
-      <a href="#" class="logo">
-        <img src="Drc20-Token/Vonx.png" width="35" height="35" alt="VonxBlockchain logo">
-        VonxBlockchain
-      </a>
-
-      <nav class="navbar" data-navbar>
-        <ul class="navbar-list">
-           
-          <li class="navbar-item">
-            <a href="index.html" class="navbar-link active" data-nav-link>HomePage</a>
-          </li>
-        
-          <li class="navbar-item">
-            <a href="#market" class="navbar-link " data-nav-link>Markets</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="#Balances" class="navbar-link" data-nav-link>Balances</a>
-          </li>
-
-
-          <li class="navbar-item">
-            <a href="#" class="navbar-link" data-nav-link>Buy Vonx</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="#" class="navbar-link" data-nav-link>VonxBlockchain</a>
-          </li>
-
-     
-
-        </ul>
-      </nav>
-
-      <button class="nav-toggle-btn" aria-label="Toggle menu" data-nav-toggler>
-        <span class="line line-1"></span>
-        <span class="line line-2"></span>
-        <span class="line line-3"></span>
-      </button>
-
-
-
-    </div>
-  </header>
-
-
-
-
-  <main>
-    <article>
- 
-
-      <!-- 
-        - #HERO
-      -->
-
-      <section class="section hero" aria-label="hero" >
-        <div class="container">
-
-          <div class="hero-content">
-
-            <h1 class="h1 hero-title">Buy & Sell Digital Assets In DRC-20</h1>
-
-            <p class="hero-text">
-              DRC-20 is a token standard on the Dogecoin network that allows developers and users to create fungible assets within Dogecoin's ecosystem.
-            </p>
-
-            <a href="#" class="btn btn-primary">Get started now</a>
-
-          </div>
-
-          <figure class="hero-banner">
-            <img src="Drc20-Token/Vonx.png" width="570" height="448" alt="Vonx banner" class="w-100">
-          </figure>
-
-        </div>
-      </section>
-
-
-
-<!-- balance start -->
-<div id="Balances"></div>
-
-<!-- <div id="" class="containe">
-  <h2>Get Wallet Balance</h2>
-  <input type="text" id="walletAddress" placeholder="Enter wallet address">
-  <button class="button" onclick="getBalance()">Get Balance</button>
-  <div id="balance"></div>
-</div> -->
-<!-- <script>
-  function getBalance() {
-      const walletAddress = document.getElementById('walletAddress').value;
-      if (!walletAddress) {
-          alert('Please enter a wallet address');
-          return;
-      }
-      // 'https://api.blockcypher.com/v1/btc/main/addrs/' + walletAddress + '/balance',
-
-      fetch('https://api.blockcypher.com/v1/btc/main/addrs/' + walletAddress + '/balance',{
-          method: 'GET',
-      })
-      .then(response => response.json())
-      .then(data => {
-          if (data.error) {
-              alert('Invalid wallet address');
-              return;
-          }
-          const balance = parseFloat(data.final_balance) / 100000000;
-          document.getElementById('balance').innerText = balance + ' BTC';
-      })
-      .catch(error => {
-          console.error('Error:', error);
-          alert('An error occurred while fetching the balance');
-      });
-  }
-</script> -->
-
-<!-- balance end -->
-
-     
-      <!-- 
-        - #MARKET
-      -->
-
-      <section id="market" class="section market" aria-label="market update" >
-        <div class="container">
-
-          <div class="title-wrapper">
-            <h2 class="h2 section-title">Market Update</h2>
-
-            <a href="allcoins.html" class="btn-link">See All Coins</a>
-          </div>
-
-          <div class="market-tab">
-
-          
-            <table class="market-table" id="tokenBody">
-
-              <thead class="table-head">
-
-                <tr class="table-row table-title">
-
-
-                  <th class="table-heading" scope="col">#</th>
-                
-
-                  <th class="table-heading" scope="col">Name</th>
-
-                  <th class="table-heading" scope="col">Last Price</th>
-                     <th class="table-heading" scope="col">Market Cap</th>
-
-                  <th class="table-heading" scope="col">24h %</th>
-
-
-
-                 
-
-                  <th class="table-heading"></th>
-
-                </tr>
-
-              </thead>
-
-              <tbody class="table-body" id="tokenData">
-
-            
-
-             
-             
-              </tbody>
-
+<section class="section-market">
+    <main class="table" id="customers_table">
+        <section class="table__header">
+            <h1>Market Update</h1>
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search Coin">
+            </div>
+        </section>
+        <section class="table__body">
+            <table  id="tokenBody">
+                <thead>
+                    <tr>
+                        <th> # </th>
+                        <th> Coin <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Price <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Change<span class="icon-arrow">&UpArrow;</span></th>
+                        <th> MarketCap <span class="icon-arrow">&UpArrow;</span></th>
+                        <!-- <th> Amount <span class="icon-arrow">&UpArrow;</span></th> -->
+                    </tr>
+                </thead>
+                <tbody id="tokenData">
+               
+    
+    
+                </tbody>
             </table>
+        </section>
+    </main>
+</section>
 
-          </div>
 
 
-        </div>
-      </section>
 
-      <script>
-        document.addEventListener('DOMContentLoaded', () => {
+<!-- <script>
+  document.addEventListener('DOMContentLoaded', () => {
   const tableBody = document.getElementById('tokenBody');
   let counter = 1;
 
   fetch('https://api.coinranking.com/v2/coins?tags[]=drc-20')
     .then(response => response.json())
     .then(data => {
-      const tokens = data.data.coins.slice(0, 10); // Slice to get only the first 8 tokens
+      const tokens = data.data.coins;
+      console.log(tokens);
 
       tokens.sort((a, b) => b.price - a.price);
-      
-      tokens.forEach(token => {
-        const {symbol, price, marketCap, change, iconUrl, icoUrl } = token;
 
-        const formattedPrice = parseFloat(price).toFixed(2);
+      tokens.forEach(token => {
+        const { symbol, price, marketCap, change, iconUrl, icoUrl } = token;
+
+        const formattedPrice = parseFloat(price).toFixed(3);
 
         const row = document.createElement('tr');
         const changeColor = change >= 0 ? 'green' : 'red';
-        
-        row.innerHTML = `
-        <th class="table-data rank" scope="row">${counter}</th>
-        <td class="table-data">
-                    <div class="wrapper">
-                      <img src="${iconUrl}" width="40" height="40" alt="Vonx logo" class="img">
 
-                      <h3>
-                        <a href="#" class="coin-name">${symbol}  </a>
-                      </h3>
-                    </div>
-                  </td>
-                  <td class="table-data last-price">$${formattedPrice} </td>
-        
-                  <td class="table-data market-cap">$${marketCap}</td>
-                  <td class="table-data last-update" style="color: ${changeColor};" >${change}%</td>
-          `
+        row.innerHTML = `
+          <td>${counter}</td>
+          <td><img src="${iconUrl}" alt="">${symbol}</td>
+          <td>$${!isNaN(formattedPrice) ? formattedPrice : 'Not Available'}</td>
+          <td>$${marketCap !== null ? marketCap : 'Not Available'}</td>
+          <td style="color: ${changeColor};"><strong>${change !== null ? change : 'Not Available'}%</strong></td> `
         ;
-        
+
         tableBody.appendChild(row);
         counter++;
       });
+
+      const search = document.querySelector('.input-group input');
+    //   table_rows = document.querySelectorAll('tbody tr'),
+      search.addEventListener('input', searchTable);
+
+         function searchTable() {
+        row.forEach((row, i) => {
+        let table_data = row.textContent.toLowerCase(),
+            search_data = search.value.toLowerCase();
+
+        row.classList.toggle('hide', table_data.indexOf(search_data) < 0);
+        row.style.setProperty('--delay', i / 25 + 's');
+    })
+
+    document.querySelectorAll('tbody tr:not(.hide)').forEach((visible_row, i) => {
+        visible_row.style.backgroundColor = (i % 2 == 0) ? 'transparent' : '#0000000b';
+    });
+} ;
+
+
     })
     .catch(error => console.error('Error fetching data:', error));
 });
-      </script>
+  </script> -->
 
 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tableBody = document.getElementById('tokenBody');
+      let counter = 1;
+
+      fetch('https://api.coinranking.com/v2/coins?tags[]=drc-20')
+        .then(response => response.json())
+        .then(data => {
+          const tokens = data.data.coins;
+
+          tokens.sort((a, b) => b.price - a.price);
+
+          tokens.forEach(token => {
+            const { symbol, price, marketCap, change, iconUrl, icoUrl } = token;
+
+            const formattedPrice = parseFloat(price).toFixed(3);
+
+            const row = document.createElement('tr');
+            const changeColor = change >= 0 ? 'green' : 'red';
+
+            row.innerHTML = `
+              <td>${counter}</td>
+              <td><img src="${iconUrl}" alt="">${symbol}</td>
+              <td>$${!isNaN(formattedPrice) ? formattedPrice : 'Not Available'}</td>
+              <td>$${marketCap !== null ? marketCap : 'Not Available'}</td>
+              <td style="color: ${changeColor};"><strong>${change !== null ? change : 'Not Available'}%</strong></td> 
+              `
+            ;
+
+            tableBody.appendChild(row);
+            counter++;
+          });
+
+          const search = document.querySelector('.form-control');
+          search.addEventListener('input', searchTable);
+
+          function searchTable() {
+            const row = [...tableBody.children];
+
+            row.forEach((row, i) => {
+              let table_data = row.textContent.toLowerCase(),
+                 search_data = search.value.toLowerCase();
+
+              row.classList.toggle('hide', table_data.indexOf(search_data) < 0);
+              row.style.setProperty('--delay', i / 25 + 's');
+            });
+
+            document.querySelectorAll('tbody tr:not(.hide)').forEach((visible_row, i) => {
+              visible_row.style.backgroundColor = (i % 2 == 0) ? 'transparent' : '#0000000b';
+            });
+          };
+         
+
+        })
+        .catch(error => console.error('Error fetching data:', error));
+    });
+  </script>
+  <br><br><br><br>
 
 
-
-      <!-- 
-        - #INSTRUCTION
-      -->
-
-
-
-
-
-     
-      <!-- 
-        - #ABOUT
-      -->
-
-      <section class="section about" aria-label="about" >
-        <div class="container">
-
-          <figure class="about-banner">
-            <img src="Drc20-Token/Vonx.png" width="748" height="436" loading="lazy" alt="about banner"
-              class="w-100">
-          </figure>
-
-          <div class="about-content">
-
-            <h2 class="h2 section-title">What Is Vonx</h2>
-
-            <p class="section-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia tempora deleniti corrupti recusandae. Id perferendis optio earum sit, perspiciatis quisquam sapiente iure distinctio recusandae odio reprehenderit possimus blanditiis tempora minus.
-            </p>
-
-
-
-            <a href="#" class="btn btn-primary">Explore More</a>
-
-          </div>
-
+<footer class="d-flex pb-5 pt-6 pt-md-7 border-top border-light ">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <p style="color: white;">VonxBlockchain is here with great strength & ability to help DEFI investors to gain access to unique projects & utilities, giving the best to add more value to the Blockchain technology.</p>
+                <ul class="d-flex list-unstyled mb-5 mb-lg-0">
+                    <li style="margin-right: 10px;" class="mr-2">
+                        <a href="https://twitter.com/Vonxdrc20" target="_blank" class="btn btn-icon-only btn-pill btn-primary" aria-label="twitter social link"
+                        data-toggle="tooltip" data-placement="top" title="Follow safutrendz on Twitter">
+                            <span aria-hidden="true" class="fab fa-twitter"></span>
+                        </a>
+                    </li>
+            
+                    <li class="mr-2">
+                        <a href="" target="_blank" class="btn btn-icon-only btn-pill btn-primary" aria-label="dribbble social link"
+                        data-toggle="tooltip" data-placement="top" title="Subscribe on Telegram">
+                            <span aria-hidden="true" class="fab fa-telegram"></span>
+                        </a>
+                    </li>
+                  
+                </ul>
+            </div>
+            <div class="col-6 col-lg-2 mb-5 mb-lg-0">
+                <h5 style="color: white;">COMPANY</h5>
+                <ul class="footer-links list-unstyled mt-2">
+                    <li class="mb-1"><a class="p-2" href="#Services">HOME </a></li>
+                    <li class="mb-1"><a class="p-2" href="#About-Us">MARKET</a></li>
+                    <li class="mb-1"><a class="p-2"  href="#Features">EXPLORER</a></li>
+                    <li class="mb-1"><a class="p-2" href="#Allocation">ABOUT US</a></li>
+                    <li class="mb-1"><a class="p-2"  href="#Roadmap">Buy Vonx Now</a></li>
+                    <li class=""><a class="p-2" target="_blank" href="mailto:">Mail Us</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="col-12 col-lg-4 mb-5 mb-lg-0">
+                <h5 style="color: white;">CONNECT WITH US</h5>
+                <p class="text-gray font-small mt-2" style="color: white;">Join us to stay updated</p>
+                <form action="#">
+                    <div class="form-row mb-2">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary btn-block" data-loading-text="Sending">
+                                <a href="" target="_blank" style="color: black!important;"><span>Join Telegram Group</span></a>
+                            </button>
+                            
+                            <button type="submit" class="btn btn-primary btn-block" data-loading-text="Sending">
+                                <a href="" target="_blank" style="color: black!important;"><span>Join Telegram Channel</span></a>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-      </section>
-
-    </article>
-  </main>
-
-
-
-
-
-  <!-- 
-    - #FOOTER
-  -->
-
-  <footer class="footer">
-
-
-    <div class="footer-bottom">
-      <div class="container">
-
-        <p class="copyright">
-          &copy; 2023 Vonx All Rights Reserved by <a href="#" class="copyright-link">VonxBlockchain</a>
-        </p>
-
-        
-
-      </div>
+        <hr class="my-5">
+        <div class="row">
+            <div class="col">
+                <a href="index.html" target="_blank" class="d-flex justify-content-center">
+                    <img src="img/logo1.png" height="100px" width="100px" class="mb-3" alt="Vonx Logo">
+                </a>
+            <div class="d-flex text-center justify-content-center align-items-center" role="contentinfo">
+                <p class="font-weight-normal font-small mb-0" style="color: white;">Copyright © VonxBlockchain
+                    <span class="current-year">2023</span>. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
     </div>
+</footer>
 
-  </footer>
-
-
-
-
-
-  <!-- 
-    - custom js link
-  -->
-  <script src="./assets/js/script.js" defer></script>
-
-  <!-- 
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
-
 </html>
